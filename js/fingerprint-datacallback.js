@@ -4,7 +4,7 @@ Raven
     .config('https://<key>@sentry.io/<project>', {
         dataCallback: function (data) {
             // perform conditional on data object
-            if (data.message === "Some message/error...") {
+            if (data.exception.values[0].value === "Some message/error...") {
                 // override fingerprint
                 data.fingerprint = ['Some-message-error', 'etc'];
 
